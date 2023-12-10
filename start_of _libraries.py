@@ -30,4 +30,4 @@ print(statistics.mean([100,100,80,60]))
 """
 
 import sys
-print("hello, my name is ", sys.argv[1])
+print("hello my name is", sys.argv[1])
