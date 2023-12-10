@@ -1,5 +1,5 @@
 import sys
-import cowsay
+from saying import hello
 
 if len(sys.argv) == 2 :
-  cowsay.__builtins__
+  hello(sys.argv[1])
