@@ -8,7 +8,7 @@ The program should ultimately output the user’s score: the number of correct a
 """
 
 import random
-
+"""
 def main():
   level = get_level()
   score = simulate_game(level)
@@ -68,3 +68,16 @@ def simulate_game(level) :
 
 if __name__ == '__main__' :
   main()
+
+  """
+
+def main() :
+  level = get_level()
+  x,y = generate_integer(level)
+  simulate_round()
+  simulate
+
+
+
+
+

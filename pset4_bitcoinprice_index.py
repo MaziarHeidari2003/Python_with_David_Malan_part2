@@ -15,22 +15,19 @@ import requests
 import sys
 import json
 
-if len(sys.argv) == 2 :
+if len(sys.argv) == 2  :
   try:
-    bitcoin_num = float(sys.argv[1])
-  except:
-    sys.exit('Command line arguement is not a number')
-  try:  
-    response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
-  except requests.RequestException:
-    sys.exit('Something bad happened') 
-
-  o = response.json()
-  price = float(o['bpi']['USD']['rate_float'])
-  value = float(sys.argv[1])
-  total_amount = value * price
-  print(f'{total_amount:,.4f}')
-  
-
+    amount = float(sys.argv[1])
+  except ValueError:
+    sys.exit('Something wrong with the input.')
 else:
-  sys.exit('Missing command line arguement')
+  sys.exit('Something wrong with the amount of inputs')
+
+response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json').json 
+for i in response['bpi']['USD']['rate'] :
+  j = float(i)
+  total_amount = j * amount
+  print(f'{total_amount:,.4f}')
+
+
+
